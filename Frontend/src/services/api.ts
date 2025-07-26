@@ -1,6 +1,7 @@
 // API service for communicating with the backend FastAPI server
 
-const API_BASE_URL = 'http://localhost:8000';
+// Use environment variable for API URL, fallback to localhost for development
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 export interface QuestionRequest {
   question: string;
