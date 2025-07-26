@@ -1,0 +1,19 @@
+{
+  "name": "ai-assistant-chatbot",
+  "version": "1.0.0",
+  "description": "AI Assistant Chatbot with Bangla RAG Q&A system",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd Backend && python api.py",
+    "dev:frontend": "cd Frontend && npm run dev",
+    "install:all": "npm install && cd Frontend && npm install",
+    "build": "cd Frontend && npm run build",
+    "start": "cd Frontend && npm run preview"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["ai", "chatbot", "bangla", "rag", "fastapi", "react"],
+  "author": "",
+  "license": "MIT"
+} 

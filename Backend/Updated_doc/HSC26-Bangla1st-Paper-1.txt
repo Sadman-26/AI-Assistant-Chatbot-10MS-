@@ -1,0 +1,24 @@
+```json
+[
+  {"type": "institution", "content": "10 MINUTE SCHOOL"},
+  {"type": "heading", "content": "HSC 26 অনলাইন ব্যাচ"},
+  {"type": "details", "content": "বাংলা • ইংরেজি • আইসিটি"},
+  {"type": "main_subject", "content": "বাংলা ১ম পত্র"},
+  {"type": "topic", "content": "আলোচ্য বিষয়: অপরিচিতা"},
+  {"type": "contact_info", "content": "অনলাইন ব্যাচ সম্পর্কিত যেকোনো জিজ্ঞাসায়, কল করো 16910"}
+]
+```
+
+**Formatted Text Output:**
+
+10 MINUTE SCHOOL
+
+শিরোনাম: HSC 26 অনলাইন ব্যাচ
+
+মূল বিষয়: বাংলা • ইংরেজি • আইসিটি
+
+শিরোনাম: বাংলা ১ম পত্র
+
+আলোচ্য বিষয়: অপরিচিতা
+
+গুরুত্বপূর্ণ তথ্য: অনলাইন ব্যাচ সম্পর্কিত যেকোনো জিজ্ঞাসায়, কল করো 16910
