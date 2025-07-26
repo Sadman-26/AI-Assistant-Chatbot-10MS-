@@ -1,5 +1,8 @@
 # AI Assistant Chatbot
 
+#Demonstration link(video)
+https://youtu.be/yjwrujxfe0U
+
 
 A modern AI chatbot application with a Bangla RAG (Retrieval-Augmented Generation) Q&A system. The application features a beautiful React frontend with a FastAPI backend.
 
