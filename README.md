@@ -1,5 +1,6 @@
 # AI Assistant Chatbot
 
+
 A modern AI chatbot application with a Bangla RAG (Retrieval-Augmented Generation) Q&A system. The application features a beautiful React frontend with a FastAPI backend.
 
 ## Features
@@ -166,8 +167,36 @@ npm run build
 
 This will create a production build in the `Frontend/dist` directory.
 
-## 1. Text Extraction Method and Formatting Challenges
 
+### Sample Queries and Outputs
+<img width="863" height="164" alt="image" src="https://github.com/user-attachments/assets/6fea4062-57ca-467f-b87d-44df429b4d02" />
+<img width="825" height="150" alt="image" src="https://github.com/user-attachments/assets/f9d0f36e-813b-455b-a3f5-c9a1716fac69" />
+<img width="845" height="175" alt="image" src="https://github.com/user-attachments/assets/541e1d4b-1e1b-46f7-a469-d7682c0df3eb" />
+<img width="836" height="334" alt="image" src="https://github.com/user-attachments/assets/2a5e7bc8-720c-43ff-8e8d-b5b4ddf8fa8c" />
+<img width="841" height="320" alt="image" src="https://github.com/user-attachments/assets/8167940b-8708-4502-8dc5-244740eb1692" />
+
+
+User Imterface should look like this
+<img width="1886" height="958" alt="image" src="https://github.com/user-attachments/assets/3be84609-f53d-434b-a060-afc7e12709f0" />
+
+
+
+
+
+## 1. Text Extraction Method and Formatting Challenges
+What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?
+I used 3 types of methops to extract the pdf. 
+    Firstly, I used Traditional OCR(Optical Character Recognition) using poppler and tesseract.
+        Problems:
+            1. Couldn't read words properly.
+    Secondly, I used LLM based OCR using poppler. It was doing better performance than the traditional model but still had some fatal flaws
+        Problems:
+            1. Couldn't handle the word meaning ssection and mcq parts.
+    Finally, I used direct LLM(Large Language Model) with gemini api but still it has some problems.
+        Problem:
+            1. Model started hallucinating while taking mcq data
+        Solution:
+            1. Changed system prompt to take only the text answer from the mcq instead of the options. 
 ### Method Used
 - **Library**: `TextLoader` and `DirectoryLoader` from LangChain
 - **File Format**: Plain text files (`.txt`) with UTF-8 encoding
@@ -294,7 +323,7 @@ class EnhancedBanglaEmbeddings(Embeddings):
 
 
 
-### Sample Queries and Outputs
+
 
 
 #### Educational Content Suitability
