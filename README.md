@@ -186,7 +186,8 @@ User Imterface should look like this
 
 
 
-## 1. Text Extraction Method and Formatting Challenges
+# 1. What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?
+## Text Extraction Method and Formatting Challenges
 What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?
 I used 3 types of methops to extract the pdf. 
     Firstly, I used Traditional OCR(Optical Character Recognition) using poppler and tesseract.
@@ -248,7 +249,8 @@ def clean_bangla_text(text: str) -> str:
 - **Educational Format**: Questions, answers, and explanations in structured format
 - **Metadata Extraction**: Filename-based metadata extraction for educational context
 
-## 2. Chunking Strategy
+# 2. What chunking strategy did you choose (e.g. paragraph-based, sentence-based, character limit)? Why do you think it works well for semantic retrieval?
+## Chunking Strategy
 
 ### Strategy Used
 - **Method**: `RecursiveCharacterTextSplitter` with custom Bangla-specific separators
@@ -290,7 +292,8 @@ separators = [
 - **Topic Continuity**: Maintains educational topic flow
 - **Structured Content**: Handles formatted educational material
 
-## 3. Embedding Model Choice
+# 3. What embedding model did you use? Why did you choose it? How does it capture the meaning of the text?
+## Embedding Model Choice
 
 ### Model Used
 - **Model**: `intfloat/multilingual-e5-large`
@@ -346,7 +349,8 @@ class EnhancedBanglaEmbeddings(Embeddings):
 - **Topic Clustering**: Groups related educational content
 - **Semantic Search**: Enables meaningful educational content retrieval
 
-## 4. Similarity Method and Storage Setup
+# 4. How are you comparing the query with your stored chunks? Why did you choose this similarity method and storage setup?
+## Similarity Method and Storage Setup
 
 ### Similarity Method
 - **Algorithm**: Cosine similarity with normalized embeddings
@@ -385,7 +389,8 @@ index = pc.create_index(
 - **Fast Retrieval**: Optimized for similarity search
 - **Serverless**: Cost-effective for variable workloads
 
-## 5. Query-Document Comparison Strategy
+# 5. How do you ensure that the question and the document chunks are compared meaningfully? What would happen if the query is vague or missing context?
+## Query-Document Comparison Strategy
 
 ### Comparison Method
 
@@ -447,6 +452,8 @@ def ask_bangla_question(question):
 - **Generic Responses**: Some responses may be generic for complex questions
 - **Chunk Dependencies**: Heavily depends on document chunk quality
 - **Context Limitations**: May miss broader context in complex queries
+
+# Do the results seem relevant? If not, what might improve them (e.g. better chunking, better embedding model, larger document)?
 
 ### Potential Improvements
 
