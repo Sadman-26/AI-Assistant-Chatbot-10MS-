@@ -14,20 +14,25 @@ A modern AI chatbot application with a Bangla RAG (Retrieval-Augmented Generatio
 ## Project Structure
 
 ```
-AI-Assistant-Chatbot/
+AI-Assistant-Chatbot-10MS-/
 ├── Backend/           # FastAPI backend with RAG system
 │   ├── api.py        # Main API server
 │   ├── qa_interface.py
 │   ├── rag.py
-│   └── requirements.txt
+│   ├── requirement.txt
+│   ├── env.example
+│   ├── doc/          # Source documents for RAG
+│   └── Updated_doc/  # Updated documents for RAG
 ├── Frontend/         # React + TypeScript frontend
 │   ├── src/
 │   │   ├── components/
 │   │   ├── hooks/
 │   │   ├── services/
 │   │   └── pages/
-│   └── package.json
-└── package.json      # Root package.json for easy startup
+│   ├── public/
+│   ├── package.json
+│   └── package-lock.json
+└── README.md         # Project documentation
 ```
 
 ## Prerequisites
@@ -41,25 +46,20 @@ AI-Assistant-Chatbot/
 1. **Clone the repository** (if not already done):
 ```bash
 git clone <repository-url>
-cd AI-Assistant-Chatbot
+cd AI-Assistant-Chatbot-10MS-
 ```
 
-2. **Install root dependencies**:
-```bash
-npm install
-```
-
-3. **Install frontend dependencies**:
+2. **Install frontend dependencies**:
 ```bash
 cd Frontend
 npm install
 cd ..
 ```
 
-4. **Install backend dependencies**:
+3. **Install backend dependencies**:
 ```bash
 cd Backend
-pip install -r requirements.txt
+pip install -r requirement.txt
 cd ..
 ```
 
@@ -68,7 +68,7 @@ cd ..
 1. **Create environment file** in the Backend directory:
 ```bash
 cd Backend
-cp .env.example .env  # if .env.example exists
+cp env.example .env  # if env.example exists
 ```
 
 2. **Add your API keys** to the `.env` file:
@@ -79,21 +79,16 @@ PINECONE_API_KEY=your_pinecone_api_key_here
 
 ## Running the Application
 
-### Option 1: Run both backend and frontend together
+### Start the backend (in one terminal):
 ```bash
+cd Backend
+uvicorn api:app --reload --port 8000
+```
+
+### Start the frontend (in another terminal):
+```bash
+cd Frontend
 npm run dev
-```
-
-### Option 2: Run separately
-
-**Start the backend** (in one terminal):
-```bash
-npm run dev:backend
-```
-
-**Start the frontend** (in another terminal):
-```bash
-npm run dev:frontend
 ```
 
 ## Accessing the Application
@@ -140,7 +135,7 @@ Content-Type: application/json
 
 1. **Backend won't start**:
    - Check if Python and pip are installed
-   - Verify all dependencies are installed: `pip install -r Backend/requirements.txt`
+   - Verify all dependencies are installed: `pip install -r Backend/requirement.txt`
    - Check if API keys are set in `.env` file
 
 2. **Frontend won't start**:
@@ -159,12 +154,13 @@ Content-Type: application/json
 ### Port Conflicts
 
 If you get port conflicts:
-- Backend: Change port in `Backend/api.py` (line 123)
+- Backend: Change port in `Backend/api.py`
 - Frontend: Change port in `Frontend/vite.config.ts`
 
 ## Building for Production
 
 ```bash
+cd Frontend
 npm run build
 ```
 
